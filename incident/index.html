@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>即日契約・翌日実施・2日後に報告が可能。｜IssueHunt 脆弱性診断（被害のあとの再発防止）</title>
-<meta name="description" content="被害のあとの“再発防止”に強い脆弱性診断。何を直せばいいか、まで分かる。修正後の再診断は無料。">
+<title>“安全になった”を、第三者の診断で証明。｜IssueHunt 脆弱性診断（被害のあとの再発防止）</title>
+<meta name="description" content="情報漏洩・不正アクセスの被害にあった企業様へ。残る弱点を洗い出し、直し方の提案から再診断まで。報告書は第三者検証の成果物としても使えます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -301,7 +301,10 @@ section{padding:88px 0}
 .scope-in li+li{border-top:1px solid var(--line)}
 .scope-in .icon-circle{width:40px;height:40px}
 .scope-in .icon-circle svg{width:22px;height:22px}
-/* 5. 流れ：番号の代わりに日付（当日・翌日・2日後・修正後） */
+/* 5. 流れ：4段（番号） */
+.flow-list.four{grid-template-columns:repeat(4,minmax(0,1fr));max-width:980px;margin-left:auto;margin-right:auto}
+@media (max-width:1000px){.flow-list.four{grid-template-columns:1fr;max-width:560px}}
+/* 旧：日付の札（使っていない） */
 .flow-list.days{grid-template-columns:repeat(4,minmax(0,1fr));max-width:980px;margin-left:auto;margin-right:auto}
 .flow-list.days li::before{content:attr(data-when);width:72px;height:32px;border-radius:999px;font-size:14px;letter-spacing:.02em}
 .flow-list.days li.free::before{background:#fff;color:var(--green-d);box-shadow:inset 0 0 0 2px var(--green)}
@@ -337,6 +340,7 @@ section{padding:88px 0}
     <symbol id="i-person-q" viewBox="0 0 24 24"><circle cx="9" cy="8.2" r="3.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 20c.6-3.5 3-5.4 6-5.4s5.4 1.9 6 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.6 4.6a2.2 2.2 0 1 1 3 2c-.6.3-1 .7-1 1.4v.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18.6" cy="11" r="1.1" fill="currentColor"/></symbol>
     <symbol id="i-signpost" viewBox="0 0 24 24"><path d="M12 3v18M9 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5h6.3l2.2 2.2-2.2 2.2H12zM12 11.5H5.7l-2.2 2.2 2.2 2.2H12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-click" viewBox="0 0 24 24"><path d="M10 10l10 4.1-4.4 1.6-1.6 4.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 3.5v2.4M4.7 5.4l1.7 1.7M3 10.5h2.4M15.3 5.4l-1.7 1.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 2.8v3M14.5 2.8v3M9.5 18.2v3M14.5 18.2v3M2.8 9.5h3M2.8 14.5h3M18.2 9.5h3M18.2 14.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="2.3" fill="currentColor"/></symbol>
 
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19 12a7 7 0 1 1-2.05-4.95" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19.5 4.5v3.8h-3.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -359,17 +363,16 @@ section{padding:88px 0}
     <div class="fv-copy">
       <span class="fv-tag">情報漏洩・不正アクセスの被害にあった企業様へ</span>
       <h1>
-        <span class="line">即日契約・翌日実施・</span>
-        <span class="line"><span class="big grad-text">2日後に報告</span>が可能。</span>
+        <span class="line">“安全になった”を、</span>
+        <span class="line"><span class="big grad-text">第三者の診断</span>で証明。</span>
       </h1>
-      <p class="sub">被害のあとの<em>“再発防止”</em>に強い<br>脆弱性診断。</p>
+      <p class="sub">残る弱点を洗い出し、<br>直し方の提案から<em>再診断</em>まで。</p>
       <p class="fv-badge"><span class="b"><svg><use href="#i-check"/></svg>利用企業の<strong>7割</strong>が上場企業</span></p>
       <ul class="fv-points">
-        <li class="main"><svg><use href="#i-clock"/></svg>最短2日後に<br>報告</li>
+        <li class="main"><svg><use href="#i-list"/></svg>第三者検証に<br>使える報告書</li>
         <li><svg><use href="#i-wrench"/></svg>何を直せばいいか、<br>まで分かる</li>
-        <li><svg><use href="#i-refresh"/></svg>修正後の再診断は<br>無料</li>
+        <li><svg><use href="#i-refresh"/></svg>修正後の再診断は<br>1か月以内なら無料</li>
       </ul>
-      <p class="note">※最短の場合。診断の範囲によって異なります。</p>
     </div>
 
     <form class="form-card" id="form" novalidate>
@@ -430,7 +433,7 @@ section{padding:88px 0}
     <div class="worry-cards">
       <div class="worry-card"><span class="icon-circle"><svg><use href="#i-search"/></svg></span><p>ほかにも穴が残っていないか、自分たちでは確かめきれない。</p></div>
       <div class="worry-card"><span class="icon-circle"><svg><use href="#i-wrench-q"/></svg></span><p>何から直せばいいのか、優先順位がつけられない。</p></div>
-      <div class="worry-card"><span class="icon-circle"><svg><use href="#i-calendar"/></svg></span><p>診断を頼もうにも、見積もりや日程の調整に何週間もかかりそう。</p></div>
+      <div class="worry-card"><span class="icon-circle"><svg><use href="#i-shield-q"/></svg></span><p>直したつもりでも、本当に安全になったのか、社内にも取引先にも説明できない。</p></div>
     </div>
     <div class="answer"><p>IssueHuntの脆弱性診断なら、<br><span class="grad-text">その3つを解消できます。</span></p></div>
   </div>
@@ -445,9 +448,8 @@ section{padding:88px 0}
       <div class="f-img"><img class="ph" src="assets/inc_speed.webp" alt="契約・診断・報告の3つのカードが矢印でつながり、フクロウのマスコットが指さしている様子" width="1200" height="850" loading="lazy"></div>
       <div>
         <span class="f-label"><b>01</b>特長</span>
-        <h3>即日契約・翌日実施・<br><span class="grad-text">2日後に報告</span>が可能。</h3>
-        <p class="body">ご相談の当日に契約し、翌日に診断を始め、2日後に結果をご報告できます。検査する場所の洗い出しなど、<strong>準備や作業の一部をAIが担当</strong>するので、診断を始めるまでの手間を減らせます。</p>
-        <p class="note">※最短の場合。診断の範囲によって異なります。</p>
+        <h3>“安全になった”を、<br><span class="grad-text">第三者の診断</span>で証明。</h3>
+        <p class="body">診断後、1週間ほどをめどに報告書をお出しします。報告書は<strong>第三者検証の成果物</strong>としてもお使いいただけます。見つかった弱点だけでなく、弱点が見つからなかったことも確かめられるので、対策のあとに「安全になった」と社内や取引先へ説明する材料になります。</p>
       </div>
     </article>
 
@@ -465,7 +467,7 @@ section{padding:88px 0}
       <div>
         <span class="f-label"><b>03</b>特長</span>
         <h3>直したあとも、<br>無料でもう一度確かめる。</h3>
-        <p class="body">直した箇所が本当に直っているかを、修正後の再診断で確かめます。<strong class="nb">再診断は無料</strong>です。</p>
+        <p class="body">直した箇所が本当に直っているかを、修正後の再診断で確かめます。再診断は、診断後1か月以内なら<strong class="nb">無料</strong>です。</p>
               </div>
     </article>
 
@@ -479,13 +481,13 @@ section{padding:88px 0}
 <section class="flow soft">
   <div class="wrap">
     <h2 class="sec-title">ご相談から再診断まで</h2>
-    <ol class="flow-list days">
-      <li data-when="当日"><h3>ご相談・ご契約</h3><p>状況と、調べたいサービスをお聞かせください。範囲と費用を決めてご契約いただきます。</p></li>
-      <li data-when="翌日"><h3>診断</h3><p>AIと診断員で検査します。</p></li>
-      <li data-when="2日後"><h3>結果と直し方のご報告</h3><p>見つかった弱点と、その直し方をお伝えします。</p></li>
-      <li data-when="修正後" class="free"><h3>再診断（無料）</h3><p>直した箇所を、もう一度確かめます。</p></li>
+    <ol class="flow-list four">
+      <li><h3>ご相談・ご契約</h3><p>状況と、調べたいサービスをお聞かせください。範囲と費用を決めてご契約いただきます。</p></li>
+      <li><h3>診断</h3><p>AIと診断員で検査します。</p></li>
+      <li><h3>結果と直し方のご報告</h3><p>診断後1週間ほどをめどに、見つかった弱点と直し方を報告書でお伝えします。</p></li>
+      <li class="free"><h3>修正後の再診断</h3><p>直した箇所を、もう一度確かめます。診断後1か月以内は無料です。</p></li>
     </ol>
-    <p class="note" style="text-align:center">※最短の場合の目安です。診断の範囲によって異なります。</p>
+    <p class="note" style="text-align:center">※報告書は、第三者検証の成果物としてもお使いいただけます。</p>
   </div>
 </section>
 
@@ -494,13 +496,13 @@ section{padding:88px 0}
   <div class="wrap">
     <h2 class="sec-title">よくある質問</h2>
     <div class="faq-list">
-      <details open><summary><span class="qa q">Q</span>本当に翌日から診断できますか？</summary><div class="a-body"><span class="qa a">A</span><p>最短で、即日契約・翌日実施・2日後に報告が可能です。日程は診断の範囲によって異なります。</p></div></details>
+      <details open><summary><span class="qa q">Q</span>どれくらいで結果が出ますか？</summary><div class="a-body"><span class="qa a">A</span><p>診断後、1週間ほどをめどに報告書をお出しします。報告書は第三者検証の成果物としてもお使いいただけます。</p></div></details>
       <details><summary><span class="qa q">Q</span>AIだけの診断ですか？</summary><div class="a-body"><span class="qa a">A</span><p>いいえ。AIがコードを解析して、攻撃コードと診断シナリオを作ります。それを経験豊富な診断員がすべて確認し、自動化が難しい複雑な処理は、診断員が自ら手を動かして検査します。</p></div></details>
       <details><summary><span class="qa q">Q</span>何をどう直せばいいか教えてもらえますか？</summary><div class="a-body"><span class="qa a">A</span><p>はい。見つかった弱点ごとに、具体的な修正方法や対策の手順を提案します。</p></div></details>
       <details><summary><span class="qa q">Q</span>何を調べたかまで分かりますか？</summary><div class="a-body"><span class="qa a">A</span><p>はい。攻撃コードや診断シナリオを、すべてお渡しします。見つかった弱点だけでなく、弱点が見つからなかったことも確認できます。</p></div></details>
-      <details><summary><span class="qa q">Q</span>直したあと、もう一度確認してもらえますか？</summary><div class="a-body"><span class="qa a">A</span><p>修正後の再診断は無料です。直した箇所が本当に直っているかを、もう一度確かめます。</p></div></details>
+      <details><summary><span class="qa q">Q</span>直したあと、もう一度確認してもらえますか？</summary><div class="a-body"><span class="qa a">A</span><p>修正後の再診断は無料です（診断後1か月以内）。直した箇所が本当に直っているかを、もう一度確かめます。</p></div></details>
       <details><summary><span class="qa q">Q</span>初動対応もお願いできますか？</summary><div class="a-body"><span class="qa a">A</span><p>初動対応は承っていません。直後の対応を終えたあと、再発を防ぐための脆弱性診断を行います。</p></div></details>
-      <details><summary><span class="qa q">Q</span>費用はどう決まりますか？</summary><div class="a-body"><span class="qa a">A</span><p>調べる対象の数に応じたプランでご案内します。相場価格の約半額です。</p></div></details>
+      <details><summary><span class="qa q">Q</span>費用はどう決まりますか？</summary><div class="a-body"><span class="qa a">A</span><p>調べる対象の数に応じたプランでご案内します。ご相談のうえ、お見積もりをお出しします。</p></div></details>
       <details><summary><span class="qa q">Q</span>相談は無料ですか？</summary><div class="a-body"><span class="qa a">A</span><p>ご相談は無料です。</p></div></details>
     </div>
   </div>
@@ -510,7 +512,7 @@ section{padding:88px 0}
 <section class="contact-band">
   <div class="wrap">
     <h2>再発防止の診断、<br>まずは状況をお聞かせください。</h2>
-    <p>被害の状況と、調べたいサービスをお知らせください。最短の日程と、費用の目安をご案内します。ご相談は無料です。</p>
+    <p>被害の状況と、調べたいサービスをお知らせください。診断の進め方と、費用の目安をご案内します。ご相談は無料です。</p>
     <a class="btn btn-white js-to-form" href="#form">まずは無料で相談する<span class="chev"></span></a>
   </div>
 </section>

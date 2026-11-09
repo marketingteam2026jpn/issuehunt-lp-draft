@@ -482,6 +482,7 @@ section{background:var(--bg)}
     <symbol id="i-person-q" viewBox="0 0 24 24"><circle cx="9" cy="8.2" r="3.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 20c.6-3.5 3-5.4 6-5.4s5.4 1.9 6 5.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.6 4.6a2.2 2.2 0 1 1 3 2c-.6.3-1 .7-1 1.4v.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18.6" cy="11" r="1.1" fill="currentColor"/></symbol>
     <symbol id="i-signpost" viewBox="0 0 24 24"><path d="M12 3v18M9 21h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5h6.3l2.2 2.2-2.2 2.2H12zM12 11.5H5.7l-2.2 2.2 2.2 2.2H12z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-click" viewBox="0 0 24 24"><path d="M10 10l10 4.1-4.4 1.6-1.6 4.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 3.5v2.4M4.7 5.4l1.7 1.7M3 10.5h2.4M15.3 5.4l-1.7 1.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 2.8v3M14.5 2.8v3M9.5 18.2v3M14.5 18.2v3M2.8 9.5h3M2.8 14.5h3M18.2 9.5h3M18.2 14.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="2.3" fill="currentColor"/></symbol>
 
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 19.5c.6-3.4 3-5.3 6-5.3s5.4 1.9 6 5.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16.6" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M16 14.3c2.5.1 4.4 1.8 5 4.7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
@@ -512,9 +513,8 @@ section{background:var(--bg)}
       <ul class="fv-points">
         <li class="main"><svg><use href="#i-wrench"/></svg>何を直せばいいか、<br>まで分かる</li>
         <li><svg><use href="#i-list"/></svg>診断の準備は、<br>ほとんど不要</li>
-        <li><svg><use href="#i-tag"/></svg>相場価格の<br>約半額</li>
+        <li><svg><use href="#i-ai"/></svg>診断特化のAI<br>×診断員</li>
       </ul>
-      <p class="note">※費用は、診断の範囲・内容によって異なります。</p>
     </div>
 
     <form class="form-card" id="form" novalidate>
@@ -618,9 +618,8 @@ section{background:var(--bg)}
       <div class="f-img"><img class="ph" src="assets/pop/feat_price.jpg" alt="調べた場所から直したあとの確認まで、順に見えるパネルをのぞくフクロウのマスコット" width="1024" height="1024" loading="lazy"></div>
       <div>
         <span class="f-label"><b>03</b>特長</span>
-        <h3><span class="grad-text">相場価格の約半額</span>。<br>直したあとの再診断も無料。</h3>
-        <p class="body">作業の一部をAIが担当し、その結果を経験豊富な診断員がすべて確認します。手間を減らした分、費用を相場価格の約半額に抑えています。直した箇所が本当に直っているかを確かめる<strong class="nb">再診断も、無料</strong>です。</p>
-        <p class="note">※費用は、診断の範囲・内容によって異なります。</p>
+        <h3><span class="grad-text">診断特化のAIエージェント</span>と、<br>経験豊富な診断員で。</h3>
+        <p class="body">脆弱性診断に特化して自社で開発したAIエージェントが、検査する場所を広く調べ、その結果を経験豊富な診断員がすべて確認します。AIでは調べにくい複雑な処理は、診断員が手作業で検査します。手間を減らした分、診断の質を落とさずに費用を抑えています。直した箇所が本当に直っているかを確かめる再診断も、診断後1か月以内なら<strong class="nb">無料</strong>です。</p>
       </div>
     </article>
 
@@ -634,15 +633,15 @@ section{background:var(--bg)}
 <section class="flow soft">
   <div class="wrap">
     <h2 class="sec-title">ご相談から結果のご報告まで</h2>
-    <p class="speed">最短で、即日契約・翌日実施・2日後に報告が可能です。</p>
+    <p class="speed">診断後、1週間ほどをめどに報告書をお出しします。</p>
     <ol class="flow-list">
       <li><h3>ご相談</h3><p>サイトの概要と、気になっていることをお聞かせください。</p></li>
       <li><h3>範囲・費用・日程のご案内</h3><p>診断する範囲を決め、費用と日程をお伝えします。</p></li>
       <li><h3>診断</h3><p>AIと診断員で検査します。</p></li>
-      <li><h3>結果と直し方のご報告</h3><p>検査した内容、見つかった弱点、直し方をお伝えします。</p></li>
-      <li class="free"><h3>修正後の再診断（無料）</h3><p>直した箇所を、もう一度確かめます。</p></li>
+      <li><h3>結果と直し方のご報告</h3><p>診断後1週間ほどをめどに、検査した内容・見つかった弱点・直し方を報告書でお伝えします。</p></li>
+      <li class="free"><h3>修正後の再診断</h3><p>直した箇所を、もう一度確かめます。診断後1か月以内は無料です。</p></li>
     </ol>
-    <p class="note" style="text-align:center">※最短の場合の目安です。診断の範囲によって異なります。</p>
+    <p class="note" style="text-align:center">※報告書は、第三者検証の成果物としてもお使いいただけます。</p>
   </div>
 </section>
 
@@ -656,8 +655,8 @@ section{background:var(--bg)}
       <details><summary><span class="qa q">Q</span>AIだけの診断ですか？</summary><div class="a-body"><span class="qa a">A</span><p>いいえ。AIがコードを解析して、攻撃コードと診断シナリオを作ります。それを経験豊富な診断員がすべて確認し、自動化が難しい複雑な処理は、診断員が自ら手を動かして検査します。</p></div></details>
       <details><summary><span class="qa q">Q</span>どんな基準で診断しますか？</summary><div class="a-body"><span class="qa a">A</span><p>OWASP Top 10やASVSなど、国際標準に準拠して診断します。</p></div></details>
       <details><summary><span class="qa q">Q</span>何を調べたかまで分かりますか？</summary><div class="a-body"><span class="qa a">A</span><p>はい。攻撃コードや診断シナリオを、すべてお渡しします。見つかった弱点だけでなく、弱点が見つからなかったことも確認できます。</p></div></details>
-      <details><summary><span class="qa q">Q</span>直したあと、もう一度確認してもらえますか？</summary><div class="a-body"><span class="qa a">A</span><p>修正後の再診断は無料です。直した箇所が本当に直っているかを、もう一度確かめます。</p></div></details>
-      <details><summary><span class="qa q">Q</span>費用はどう決まりますか？</summary><div class="a-body"><span class="qa a">A</span><p>調べる対象の数に応じたプランでご案内します。相場価格の約半額です。</p></div></details>
+      <details><summary><span class="qa q">Q</span>直したあと、もう一度確認してもらえますか？</summary><div class="a-body"><span class="qa a">A</span><p>修正後の再診断は無料です（診断後1か月以内）。直した箇所が本当に直っているかを、もう一度確かめます。</p></div></details>
+      <details><summary><span class="qa q">Q</span>費用はどう決まりますか？</summary><div class="a-body"><span class="qa a">A</span><p>調べる対象の数に応じたプランでご案内します。ご相談のうえ、お見積もりをお出しします。</p></div></details>
       <details><summary><span class="qa q">Q</span>相談は無料ですか？</summary><div class="a-body"><span class="qa a">A</span><p>ご相談は無料です。</p></div></details>
     </div>
   </div>
